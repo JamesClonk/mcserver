@@ -1,0 +1,15 @@
+[Unit]
+Description=Minecraft Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=minecraft
+WorkingDirectory=/opt/minecraft
+ExecStart=/usr/bin/java -Xmx3G -jar fabric-server-mc.1.19.2-loader.0.14.19-launcher.0.11.2.jar nogui
+Restart=always
+RestartSec=240
+StandardInput=null
+
+[Install]
+WantedBy=multi-user.target
